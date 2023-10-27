@@ -1,5 +1,16 @@
-import Image from "next/image"
+"use client"
 
-export default function Home() {
-  return <h1>Hiroyuki Ota</h1>
+function App() {
+  return (
+    <div className="max-w-7xl p-10 mx-auto">
+      <header>
+        <h1>hota.dev</h1>
+      </header>
+      <main>
+        <p>hello, world</p>
+      </main>
+    </div>
+  )
 }
+
+export default App
