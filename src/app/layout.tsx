@@ -27,8 +27,8 @@ export default function RootLayout({
                 <Link href="/" className="px-3">
                   Home
                 </Link>
-                <Link href="/playground" className="px-3">
-                  Playground
+                <Link href="/projects" className="px-3">
+                  Projects
                 </Link>
               </nav>
             </div>
