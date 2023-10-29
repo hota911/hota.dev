@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint/main/schema/markdownlint-config-schema.json",
+  "no-duplicate-header": {
+    "allow_different_nesting": true
+  },
+  "no-bare-urls": false,
+  "first-line-heading": {
+    "level": 2
+  }
+}
