@@ -20,6 +20,9 @@ function App() {
         <li>
           Twitter: <a href="https://twitter.com/hota911">hota911</a>
         </li>
+        <li>
+          Blog: <a href="https://hota.hatenablog.com/">hota.hatenablog.com</a>
+        </li>
       </ul>
     </main>
   )
