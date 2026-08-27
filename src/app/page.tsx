@@ -7,8 +7,9 @@ function App() {
         <li>Location: Tokyo, Japan</li>
         <li>Job: Software Engineer / Engineering Manager</li>
         <li>
-          Skills: TypeScript, Java, Python, Kotlin, SQL, React, Next.js,
-          Micronaut, Spring Boot, MySQL, Kubernetes, AWS
+          Skills: Python, TypeScript, Go, Java, SQL, AWS, Google Cloud,
+          Kubernetes, Terraform, Vercel, Dagster, Airflow, Snowflake, Next.js,
+          OpenAI, Claude, RAG
         </li>
         <li>
           GitHub: <a href="https://github.com/hota911">hota911</a>
