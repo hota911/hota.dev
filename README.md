@@ -37,4 +37,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Designs
 
-- [Open Codex link page](docs/superpowers/specs/2026-09-10-open-codex-link-design.md)
+- [Open Codex link page](docs/open-codex-link-design.md)
