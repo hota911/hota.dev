@@ -35,6 +35,21 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Claude Code を開くリンク
+
+GitHub の Markdown では `claude://` リンクが除去されるため、HTTPS 経由で Claude デスクトップアプリの
+新しい Claude Code セッションを開くページを置いている。
+
+```text
+https://hota.dev/claude/code/new?folder=<絶対パス>&q=<プロンプト>
+```
+
+- 値は URL エンコードする。`folder` と `q` だけを
+  `claude://code/new?folder=...&q=...` へ引き渡し、それ以外のクエリは捨てる。
+- ページを開くと自動で `claude://` リンクへ遷移し、遷移しない場合のために「Claude で開く」リンクを表示する。
+- プロンプトは入力欄に入るだけで送信されない。フォルダはデスクトップアプリ側で確認を求められる
+  （[Open Claude desktop with a link](https://support.claude.com/en/articles/14729294-open-claude-desktop-with-a-link)）。
+
 ## Designs
 
 - [Open Codex link page](docs/open-codex-link-design.md)
