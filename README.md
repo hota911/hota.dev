@@ -38,3 +38,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Designs
 
 - [Open Codex link page](docs/open-codex-link-design.md)
+- [Open Claude Code link page](docs/open-claude-link-design.md)
