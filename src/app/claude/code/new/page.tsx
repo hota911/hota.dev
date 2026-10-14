@@ -20,7 +20,7 @@ export default async function OpenClaudeCodePage({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
   const params = await searchParams
-  const forwarded = new URLSearchParams()
+  const forwarded = new Map<string, string>()
   for (const name of FORWARDED_PARAMS) {
     const value = params[name]
     const first = Array.isArray(value) ? value[0] : value
@@ -28,7 +28,12 @@ export default async function OpenClaudeCodePage({
       forwarded.set(name, first)
     }
   }
-  const query = forwarded.toString()
+  // encodeURIComponent turns spaces into %20; URLSearchParams would use "+",
+  // which the desktop app may not decode as a space.
+  const query = Array.from(
+    forwarded,
+    ([name, value]) => `${name}=${encodeURIComponent(value)}`,
+  ).join("&")
   const deepLink = `claude://code/new${query ? `?${query}` : ""}`
 
   return (
