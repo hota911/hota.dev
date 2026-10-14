@@ -38,17 +38,17 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Claude Code を開くリンク
 
 GitHub の Markdown では `claude://` リンクが除去されるため、HTTPS 経由で Claude デスクトップアプリの
-新しい Claude Code セッションを開くページを置いている。
+既存の Claude Code セッションを開くページを置いている。
 
 ```text
-https://hota.dev/claude/code/new?folder=<絶対パス>&q=<プロンプト>
+https://hota.dev/claude/session/<セッションID>
+→ claude://claude.ai/epitaxy/<セッションID>
 ```
 
-- 値は URL エンコードする。`folder` と `q` だけを
-  `claude://code/new?folder=...&q=...` へ引き渡し、それ以外のクエリは捨てる。
+- セッション ID は `local_...` の形式で、`/^local_[A-Za-z0-9-]{1,64}$/` に一致しない場合は 404 を返す。
+- 受け付けるのはセッション ID だけで、クエリパラメータを含めプロンプトやフォルダなどは一切引き渡さない。
 - ページを開くと自動で `claude://` リンクへ遷移し、遷移しない場合のために「Claude で開く」リンクを表示する。
-- プロンプトは入力欄に入るだけで送信されない。フォルダはデスクトップアプリ側で確認を求められる
-  （[Open Claude desktop with a link](https://support.claude.com/en/articles/14729294-open-claude-desktop-with-a-link)）。
+  セッションは、それがあるマシンの Claude デスクトップアプリで開く。
 
 ## Designs
 
