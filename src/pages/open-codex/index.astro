@@ -1,0 +1,33 @@
+---
+import Base from "../../layouts/Base.astro"
+
+const EXAMPLE_URL = "https://hota.dev/open-codex/#<thread-id>"
+---
+
+<Base
+  title="Open Codex | hota.dev"
+  description="Open a local Codex task from an HTTPS link."
+  noindex
+>
+  <h2>Open Codex</h2>
+  <p data-status="pending">Reading the Codex task link…</p>
+  <div data-status="valid" hidden>
+    <p>Opening this Codex task…</p>
+    <a data-deep-link>Open in Codex</a>
+  </div>
+  <div data-status="missing" hidden>
+    <p>Add a thread ID after #.</p>
+    <code>{EXAMPLE_URL}</code>
+  </div>
+  <div data-status="invalid" hidden>
+    <p>This Codex thread link is invalid.</p>
+    <code>{EXAMPLE_URL}</code>
+  </div>
+</Base>
+
+<script>
+  import { openFromHash } from "../../lib/open-from-hash"
+  import { parseThreadHash } from "../../lib/thread-link"
+
+  openFromHash(parseThreadHash)
+</script>

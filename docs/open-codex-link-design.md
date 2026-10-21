@@ -38,8 +38,8 @@ thread IDを扱うことを考慮する。
 
 ## 動作
 
-`/open-codex/` はNext.js App Routerのページとして実装する。URLフラグメントはサーバーへ
-送信されないため、Client Componentがブラウザ上で `window.location.hash` を読み取る。
+`/open-codex/` はAstroの静的ページとして実装する。URLフラグメントはサーバーへ
+送信されないため、ページ内の `<script>` がブラウザ上で `window.location.hash` を読み取る。
 
 1. 先頭の `#` を除いた値をthread IDとして取得する。
 2. IDが英数字、ハイフン、アンダースコアのみで1〜128文字なら有効とする。

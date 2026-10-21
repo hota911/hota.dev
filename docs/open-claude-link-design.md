@@ -45,8 +45,8 @@ https://hota.dev/open-claude/#<session-id>
 
 ## 動作
 
-`/open-claude/` はNext.js App Routerのページとして実装する。URLフラグメントはサーバーへ
-送信されないため、Client Componentがブラウザ上で `window.location.hash` を読み取る。
+`/open-claude/` はAstroの静的ページとして実装する。URLフラグメントはサーバーへ
+送信されないため、ページ内の `<script>` がブラウザ上で `window.location.hash` を読み取る。
 
 1. 先頭の `#` を除いた値をセッションIDとして取得する。
 2. IDが `/^local_[A-Za-z0-9-]{1,64}$/` に一致すれば有効とする。これはClaudeデスクトップアプリが
