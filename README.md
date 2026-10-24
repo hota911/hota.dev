@@ -19,7 +19,13 @@ pnpm run deploy  # build, then deploy dist/ to Cloudflare
 
 The site is deployed to [Cloudflare Workers Static Assets](https://developers.cloudflare.com/workers/static-assets/)
 as a static-assets-only Worker named `hota-dev` (no server code, no Astro adapter).
-`pnpm run deploy` runs `astro build` and then `wrangler deploy`; the configuration is in `wrangler.jsonc`.
+Pushes to `main` are deployed automatically by Cloudflare Workers Builds.
+`pnpm run deploy` remains for manual deploys: it runs `astro build` and then `wrangler deploy`; the configuration is in `wrangler.jsonc`.
+
+## CI and dependency updates
+
+- The GitHub Actions `build` job runs `pnpm run build` and must pass before a PR can be merged.
+- Dependabot updates npm and GitHub Actions weekly. Patch and minor PRs are auto-merged once CI passes; major updates are reviewed and merged manually.
 
 ## Layout
 
