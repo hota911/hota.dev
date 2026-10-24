@@ -1,0 +1,33 @@
+---
+import "../styles/global.css"
+
+interface Props {
+  title: string
+  description: string
+  noindex?: boolean
+}
+
+const { title, description, noindex = false } = Astro.props
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+  </head>
+  <body>
+    <header>
+      <a href="/"><h1>hota.dev</h1></a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/projects/">Projects</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

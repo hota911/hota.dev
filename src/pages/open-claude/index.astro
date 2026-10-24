@@ -1,0 +1,33 @@
+---
+import Base from "../../layouts/Base.astro"
+
+const EXAMPLE_URL = "https://hota.dev/open-claude/#<session-id>"
+---
+
+<Base
+  title="Open Claude Code | hota.dev"
+  description="Open a local Claude Code session from an HTTPS link."
+  noindex
+>
+  <h2>Open Claude Code</h2>
+  <p data-status="pending">Reading the Claude Code session link…</p>
+  <div data-status="valid" hidden>
+    <p>Opening this Claude Code session…</p>
+    <a data-deep-link>Open in Claude Code</a>
+  </div>
+  <div data-status="missing" hidden>
+    <p>Add a session ID after #.</p>
+    <code>{EXAMPLE_URL}</code>
+  </div>
+  <div data-status="invalid" hidden>
+    <p>This Claude Code session link is invalid.</p>
+    <code>{EXAMPLE_URL}</code>
+  </div>
+</Base>
+
+<script>
+  import { openFromHash } from "../../lib/open-from-hash"
+  import { parseSessionHash } from "../../lib/session-link"
+
+  openFromHash(parseSessionHash)
+</script>
