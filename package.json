@@ -13,9 +13,9 @@
     "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
-    "astro": "^7.4.11"
+    "astro": "^7.4.13"
   },
   "devDependencies": {
-    "wrangler": "4.160.1"
+    "wrangler": "4.165.0"
   }
 }
